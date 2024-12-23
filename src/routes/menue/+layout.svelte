@@ -23,17 +23,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/getLove"
+          <a class="nav-link active" aria-current="page" href="/menue/getLove"
             >Get Love</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/memories"
+          <a class="nav-link active" aria-current="page" href="/menue/memories"
             >Memories</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/toDo">Do To</a>
+          <a class="nav-link active" aria-current="page" href="/menue/toDo">Do To</a>
         </li>
       </ul>
     </div>
