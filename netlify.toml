@@ -3,4 +3,4 @@
     publish = "build"
 
 [functions]
-    directory = "src/lib"
+    directory = "functions"
