@@ -1,40 +1,45 @@
 <script>
-    import "./styles.css";
-    let { children } = $props();
-  </script>
-  
-  <nav
-    class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-    data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Love Sender</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/getLove">Get Love</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/memories">Memories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/toDo">Do To</a>
-          </li>
-        </ul>
-      </div>
+  import "./styles.css";
+  let { children } = $props();
+</script>
+
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+  data-bs-theme="dark"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/menue">Love Sender</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/getLove"
+            >Get Love</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/memories"
+            >Memories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/toDo">Do To</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
-  <div class="container mt-3">
-    {@render children()}
   </div>
-  
+</nav>
+
+<div class="container mt-3">
+  {@render children()}
+</div>
