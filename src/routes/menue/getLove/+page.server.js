@@ -1,4 +1,4 @@
-/*import { sendEmail } from "$lib/emailSender.server.js";
+import { sendEmail } from "$lib/emailSender.server.js";
 
 
-sendEmail();*/
+sendEmail();

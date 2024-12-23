@@ -13,9 +13,9 @@ export async function sendEmail() {
   });
 
   transporter.sendMail({
-    to: GOOGLE_EMAIL,
-    subject: "Test Email",
-    html: "<p>Test Email</p>",
+    to: "bastian.steingruber@gmx.ch",
+    subject: "Cle needs love!",
+    html: "<p>Write her something sweet :)</p>",
   }).then(() => {
     console.log("Email sent");
   }).catch((error) => {

@@ -1,6 +1,6 @@
 <script>
-    let pressesLeft = 5;
-    let reloadMessage = "Do something good for your partner and wait until he reload the presses.";
+    let pressesLeft = 24;
+    let reloadMessage = "Do something good for your partner and wait until he reloads the credits :)";
 
     async function triggerSendEmail() {
         isSending = true;
@@ -29,11 +29,11 @@
 </script>
 
 <div class="container">
-    <h1>Hello love, do you need some love from your loved one?</h1>
+    <h1>Hello love, do you need some love from your partner one?</h1>
 
     {#if pressesLeft > 0}
         <p>Press the button below.</p>
-        <button on:click={handleButtonClick}>Send Love</button>
+        <button on:click={handleButtonClick}>Get Love</button>
         <div class="counter">Presses left: {pressesLeft}</div>
     {:else}
         <p>{reloadMessage}</p>
