@@ -6,6 +6,11 @@ const GOOGLE_EMAIL = process.env.GOOGLE_EMAIL;
 const GOOGLE_EMAIL_PASSWORD = process.env.GOOGLE_EMAIL_PASSWORD;
 
 export async function sendEmail() {
+
+  console.log("GOOGLE_EMAIL:", process.env.GOOGLE_EMAIL);
+  console.log("GOOGLE_EMAIL_PASSWORD:", process.env.GOOGLE_EMAIL_PASSWORD);
+
+
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
