@@ -7,7 +7,7 @@
             location: formData.get('location'),
             year: formData.get('year')
         };
-        
+
         return memory;
     }
 
@@ -19,7 +19,7 @@
     }
 </script>
 <a href="/menue/memories">Back</a>
-<h1>Add Movie</h1>
+<h1>Neue Memory erstellen</h1>
 <form method="POST" action="?/create" onsubmit={redirectToMenu()}>
     <div class="mb-3">
         <label for="" class="form-label">Name</label>
