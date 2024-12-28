@@ -2,10 +2,9 @@
     let { data } = $props();
 
     function redirectToMenu() {
-        // Prevent the default form action temporarily
         setTimeout(() => {
             window.location.href = "/menue/memories";
-        }, 100); // Delay to ensure form submission is processed
+        }, 100);
     }
 </script>
 <a href="/menue/memories">Zurück</a>

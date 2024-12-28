@@ -14,7 +14,6 @@
     </div>
     <div>
       Ort: {memory.location}
-      
     </div>
     <div>
       Jahr: {memory.year}
