@@ -5,3 +5,12 @@ export async function load({ params }) {
         memory: await db.getMemory(params.memory_id)
     }
 }
+
+export const actions = {
+    removeMemory: async ( {request}) => {
+        let data = await request.formData();
+        let id = data.get("id")
+
+        await db.deleteMemory(id)
+    }
+}
