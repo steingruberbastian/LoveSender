@@ -8,6 +8,11 @@
             memoriesFiltered = memoriesFiltered.filter(
                 (memory) => memory.year === filterYear,
             );
+            if (memoryChecked) {
+                memoriesFiltered = memoriesFiltered.filter(
+                    (memory) => memory.memory,
+                );
+            }
             return memoriesFiltered;
         }
         if (memoryChecked) {
