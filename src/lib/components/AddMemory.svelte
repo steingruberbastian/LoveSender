@@ -7,12 +7,20 @@
             location: formData.get('location'),
             year: formData.get('year')
         };
+        
         return memory;
+    }
+
+    function redirectToMenu() {
+        // Prevent the default form action temporarily
+        setTimeout(() => {
+            window.location.href = "/menue/memories";
+        }, 100); // Delay to ensure form submission is processed
     }
 </script>
 <a href="/menue/memories">Back</a>
 <h1>Add Movie</h1>
-<form method="POST" action="?/create">
+<form method="POST" action="?/create" onsubmit={redirectToMenu()}>
     <div class="mb-3">
         <label for="" class="form-label">Name</label>
         <input type="text" name="title" class="form-control" value="Gib ein Titel ein" />
