@@ -21,15 +21,15 @@
     </div>
   </div>
 
-  {#if memory.watchlist}
+  {#if memory.memory}
   <form method="POST" action="?/removeFromMemories" use:enhance>
     <input name="id" type="hidden" value="{memory._id}">
-    <button class="btn btn-danger">Als ToDo markieren</button>
+    <button class="btn btn-success">Als ToDo markieren</button>
   </form>
   {:else}
   <form method="POST" action="?/addToMemories" use:enhance>
     <input name="id" type="hidden" value="{memory._id}">
-    <button class="btn btn-success">Als gemacht markieren</button>
+    <button class="btn btn-danger">Als gemacht markieren</button>
   </form>
   {/if}
 </div>

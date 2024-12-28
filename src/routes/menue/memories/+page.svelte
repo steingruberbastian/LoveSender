@@ -1,7 +1,7 @@
 <script>
     import MemoryCard from "$lib/components/MemoryCard.svelte";
   
-    let { data, memoryChecked=false } = $props();
+    let { data, memoryChecked=false, filterYear } = $props();
     let memories = $derived.by( () => {
       if (memoryChecked) {
         let memoriesFiltered = data.memories;
@@ -16,10 +16,15 @@
   <a href="/menue/memories/create" class="btn btn-primary mb-3">Neue Memory hinzufügen</a>
   
   <div class="form-check mt-3">
-    <input
-      class="form-check-input" type="checkbox" id="filter" bind:checked={memoryChecked}/>
+    <input class="form-check-input" type="checkbox" id="filter1" bind:checked={memoryChecked}/>
     <label class="form-check-label" for="filter">
       Nur schon gemachte Memories anzeigen
+    </label>
+  </div>
+  <div class="form-check mt-3">
+    <input class="form-check-input" type="number" id="filter2" bind:value={filterYear}/>
+    <label class="form-check-label" for="filter">
+      Nach dem Jahr filtern
     </label>
   </div>
   

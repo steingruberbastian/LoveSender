@@ -22,7 +22,7 @@ export const actions = {
         let data = await request.formData();
         let id = data.get("id")
 
-        let movie = {
+        let memory = {
             _id: id,
             memory: false
         }
