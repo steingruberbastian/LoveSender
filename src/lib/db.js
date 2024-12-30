@@ -32,7 +32,7 @@ async function getMemories() {
   return memories;
 }
 
-// Get movie by id
+// Get memory by id
 async function getMemory(id) {
   let memory = null;
   try {
@@ -184,6 +184,44 @@ async function getMemoriesByCategory(category_id) {
   return memories;
 }
 
+// Get category by memory_id
+async function getCategoryByMemory(memory_id) {
+  console.log("Get category for memory with id " + memory_id);
+  let category = null;
+  try {
+    const memoriesCollection = db.collection("memories");
+    const categoriesCollection = db.collection("categories");
+
+    // Find the memory by _id
+    const memoryQuery = { _id: new ObjectId(memory_id) };
+    const memory = await memoriesCollection.findOne(memoryQuery);
+
+    if (!memory) {
+      console.log("No memory with id " + memory_id);
+      // TODO: errorhandling
+      return null;
+    }
+
+    // Get the category_id from the memory
+    const category_id = memory.category_id;
+
+    // Find the category by id
+    const categoryQuery = { id: category_id };
+    const result = await categoriesCollection.findOne(categoryQuery);
+
+    if (!result) {
+      console.log("No category with id " + category_id);
+      // TODO: errorhandling
+    } else {
+      category = result.category; // extract the category attribute
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return category;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getMemories,
@@ -192,5 +230,6 @@ export default {
   updateMemory,
   deleteMemory,
   getCategories,
-  getMemoriesByCategory
+  getMemoriesByCategory,
+  getCategoryByMemory
 };

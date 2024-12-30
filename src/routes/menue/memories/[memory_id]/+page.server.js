@@ -1,9 +1,11 @@
+import { memory } from "$lib/components/MemoryCard.svelte";
 import db from "$lib/db.js";
 import { redirect } from "@sveltejs/kit";
 
 export async function load({ params }) {
     return {
         memory: await db.getMemory(params.memory_id),
+        category: await db.getCategoryByMemory(params.memory_id)
     }
 }
 

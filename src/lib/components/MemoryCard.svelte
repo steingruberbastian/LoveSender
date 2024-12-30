@@ -33,12 +33,12 @@
   {#if memory.memory}
     <form method="POST" action="?/removeFromMemories" use:enhance>
       <input name="id" type="hidden" value="{memory._id}">
-      <button class="btn btn-success w-100">Als To Do markieren</button>
+      <button class="btn btn-info w-100">Gemacht</button>
     </form>
   {:else}
     <form method="POST" action="?/addToMemories" use:enhance>
       <input name="id" type="hidden" value="{memory._id}">
-      <button class="btn btn-danger w-100">Als gemacht markieren</button>
+      <button class="btn btn-warning w-100">nocht nicht gemacht</button>
     </form>
   {/if}
 </div>

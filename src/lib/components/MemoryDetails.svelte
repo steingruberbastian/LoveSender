@@ -12,7 +12,7 @@
                 <div>
                     <p><strong>Ort:</strong> {data.memory.location}</p>
                     <p><strong>Jahr:</strong> {data.memory.year}</p>
-                    <p><strong>Kategorie:</strong> {data.memory.category}</p>
+                    <p><strong>Kategorie:</strong> {data.category}</p>
                     <form method="POST" action="?/removeMemory">
                         <input name="id" type="hidden" value="{data.memory._id}">
                         <button class="btn btn-danger">Löschen</button>
