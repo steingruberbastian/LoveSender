@@ -13,6 +13,7 @@
 
 <div class="card mb-4 shadow-sm">
   <div class="card-img-top">
+    <!-- svelte-ignore a11y_img_redundant_alt -->
     <img class="img-fluid" src={memory.image} alt="Memory Image"/>
   </div>
   <div class="card-body">
