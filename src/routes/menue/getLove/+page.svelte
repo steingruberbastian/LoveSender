@@ -28,31 +28,24 @@
     }
 </script>
 
-<div class="container">
-    <h1>Hello love, do you need some love from your partner one?</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="mb-4">Hallo love, brauchst du einen Text mit liebe?</h1>
 
-    {#if pressesLeft > 0}
-        <p>Press the button below.</p>
-        <button on:click={handleButtonClick}>Get Love</button>
-        <div class="counter">Presses left: {pressesLeft}</div>
-    {:else}
-        <p>{reloadMessage}</p>
-    {/if}
+            {#if pressesLeft > 0}
+                <p>Drücke den Knopf unten!</p>
+                <button class="btn btn-primary mb-3" on:click={handleButtonClick}>Liebestext bekommen</button>
+                <div class="counter mb-3">Du hast noch {pressesLeft} credits</div>
+            {:else}
+                <p>{reloadMessage}</p>
+            {/if}
+        </div>
+    </div>
 </div>
 
 <style>
     .container {
         text-align: center;
-        margin-top: 50px;
-    }
-    button {
-        margin: 10px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .counter {
-        margin-top: 10px;
-        font-size: 18px;
     }
 </style>
