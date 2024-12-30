@@ -34,6 +34,11 @@
         <label for="" class="form-label">Jahr</label>
         <input type="number" name="year" class="form-control" placeholder="Gib ein Jahr ein" required/>
     </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Kategorie</label>
+        <input type="text" name="category" class="form-control" placeholder="Gib eine Kategorie an" required/>
+    </div>
     
     <button type="submit" class="btn btn-primary">Memory hinzufügen</button>
   </form>
