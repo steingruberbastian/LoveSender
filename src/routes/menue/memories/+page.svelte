@@ -1,24 +1,24 @@
 <script>
     import MemoryCard from "$lib/components/MemoryCard.svelte";
 
-    let { data, memoryChecked = false, filterYear } = $props();
+    let { data, toDoChecked = false, filterYear } = $props();
     let memories = $derived.by(() => {
         if (filterYear) {
             let memoriesFiltered = data.memories;
             memoriesFiltered = memoriesFiltered.filter(
                 (memory) => memory.year === filterYear,
             );
-            if (memoryChecked) {
+            if (toDoChecked) {
                 memoriesFiltered = memoriesFiltered.filter(
-                    (memory) => memory.memory,
+                    (memory) => !memory.memory,
                 );
             }
             return memoriesFiltered;
         }
-        if (memoryChecked) {
+        if (toDoChecked) {
             let memoriesFiltered = data.memories;
             memoriesFiltered = memoriesFiltered.filter(
-                (memory) => memory.memory,
+                (memory) => !memory.memory,
             );
             return memoriesFiltered;
         } else {
@@ -34,24 +34,22 @@
         class="form-check-input"
         type="checkbox"
         id="filter1"
-        bind:checked={memoryChecked}/>
+        bind:checked={toDoChecked}/>
     <label class="form-check-label" for="filter">
-        Nur schon gemachte Memories anzeigen
+        Noch nicht gemachte Memories anzeigen
     </label>
 </div>
-<div class="form-check mt-3">
-    <div style="display: flex; align-items: center;">
-        <input
-            class="form-control"
-            type="number"
-            placeholder="Jahr"
-            id="filter2"
-            bind:value={filterYear}
-            style="width: 80px; margin-right: 10px;"/>
-        <label class="form-check-label" for="filter">
-            Nach dem Jahr filtern
-        </label>
-    </div>
+<div style="display: flex; align-items: center;">
+    <input
+        class="form-control"
+        type="number"
+        placeholder="Jahr"
+        id="filter2"
+        bind:value={filterYear}
+        style="width: 80px; margin-right: 10px;"/>
+    <label class="form-check-label" for="filter">
+        Nach dem Jahr filtern
+    </label>
 </div>
 
 <div class="row mt-3">
