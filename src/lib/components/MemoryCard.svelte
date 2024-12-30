@@ -23,7 +23,7 @@
   {#if memory.memory}
   <form method="POST" action="?/removeFromMemories" use:enhance>
     <input name="id" type="hidden" value="{memory._id}">
-    <button class="btn btn-success">Als ToDo markieren</button>
+    <button class="btn btn-success">Als To Do markieren</button>
   </form>
   {:else}
   <form method="POST" action="?/addToMemories" use:enhance>

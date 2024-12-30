@@ -11,7 +11,7 @@
         return memory;
     }
 
-    function redirectToMenu() {
+    function redirectToMenue() {
         setTimeout(() => {
             window.location.href = "/menue/memories";
         }, 100);
@@ -19,20 +19,20 @@
 </script>
 <a href="/menue/memories">Back</a>
 <h1>Neue Memory erstellen</h1>
-<form method="POST" action="?/create" onsubmit={redirectToMenu()}>
+<form method="POST" action="?/create" onsubmit={redirectToMenue()}>
     <div class="mb-3">
         <label for="" class="form-label">Name</label>
-        <input type="text" name="title" class="form-control" value="Gib ein Titel ein" />
+        <input type="text" name="title" class="form-control" placeholder="Gib ein Titel ein" required/>
     </div>
 
     <div class="mb-3">
-        <label for="" class="form-label">Year</label>
-        <input type="text" name="location" class="form-control" value="Gib ein Ort ein" />
+        <label for="" class="form-label">Ort</label>
+        <input type="text" name="location" class="form-control" placeholder="Gib ein Ort ein" required/>
     </div>
 
     <div class="mb-3">
-        <label for="" class="form-label">Length</label>
-        <input type="text" name="year" class="form-control" value=2000 />
+        <label for="" class="form-label">Jahr</label>
+        <input type="number" name="year" class="form-control" placeholder="Gib ein Jahr ein" required/>
     </div>
     
     <button type="submit" class="btn btn-primary">Memory hinzufügen</button>

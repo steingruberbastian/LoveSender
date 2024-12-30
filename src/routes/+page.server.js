@@ -1,10 +1,15 @@
 import { WEBSITE_PASSWORD } from "$env/static/private";
-function checkPassword() {
-    alert("checkPassword");
-    const pwd = document.getElementById("pwd").value;
-    if (pwd === WEBSITE_PASSWORD) {
-        window.location.href = "/menue";
-    } else {
-        alert("Falsches Passwort");
-    }
+
+export async function POST({ request }) {
+  const { password } = await request.json();
+
+  if (password === WEBSITE_PASSWORD) {
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { "Content-Type": "application/json" },
+    });
+  } else {
+    return new Response(JSON.stringify({ success: false }), {
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 }

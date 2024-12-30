@@ -3,10 +3,7 @@
   let { children } = $props();
 </script>
 
-<nav
-  class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-  data-bs-theme="dark"
->
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/menue">Love Sender</a>
     <button
@@ -23,14 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/menue/getLove"
-            >Get Love</a
-          >
+          <a class="nav-link active" aria-current="page" href="/menue/getLove">Get Love</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/menue/memories"
-            >Memories</a
-          >
+          <a class="nav-link active" aria-current="page" href="/menue/memories">Memories</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/menue/toDo">Do To</a>
