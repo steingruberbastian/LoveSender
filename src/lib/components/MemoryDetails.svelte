@@ -1,11 +1,5 @@
 <script>
     let { data } = $props();
-
-    function redirectToMenue() {
-        setTimeout(() => {
-            window.location.href = "/menue/memories";
-        }, 100);
-    }
 </script>
 <a href="/menue/memories">Zurück</a>
 <div>
@@ -15,7 +9,7 @@
         <div>
             <p>Ort: {data.memory.location}</p>
             <p>Jahr: {data.memory.year}</p>
-            <form method="POST" action="?/removeMemory" onsubmit={redirectToMenue()}>
+            <form method="POST" action="?/removeMemory">
                 <input name="id" type="hidden" value="{data.memory._id}">
                 <button class="btn btn-danger">Löschen</button>
             </form>
