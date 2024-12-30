@@ -1,4 +1,9 @@
-import db from "$lib/db.js";
+import db from '$lib/db.js';
+
+export async function load() {
+  const categories = await db.getCategories();
+  return { categories };
+}
 
 export const actions = {
     create: async ({ request }) => {
@@ -23,4 +28,4 @@ export const actions = {
 
         await db.createMemory(memory);
     }
-};
+}

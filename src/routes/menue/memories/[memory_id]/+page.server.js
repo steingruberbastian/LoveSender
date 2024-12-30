@@ -3,7 +3,7 @@ import { redirect } from "@sveltejs/kit";
 
 export async function load({ params }) {
     return {
-        memory: await db.getMemory(params.memory_id)
+        memory: await db.getMemory(params.memory_id),
     }
 }
 

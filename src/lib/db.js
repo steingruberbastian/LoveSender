@@ -10,7 +10,7 @@ const db = client.db("LoveSender"); // select database
 // Movies
 //////////////////////////////////////////
 
-// Get all movies
+// Get all memories
 async function getMemories() {
   let memories = [];
   try {
@@ -137,6 +137,28 @@ async function deleteMemory(id) {
   return null;
 }
 
+// Get all categories
+async function getCategories() {
+  let categories = [];
+  try {
+    const collection = db.collection("categories");
+
+    // You can specify a query/filter here
+    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
+    const query = {};
+
+    // Get all objects that match the query
+    categories = await collection.find(query).toArray();
+    categories.forEach((category) => {
+      category._id = category._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return categories;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getMemories,
@@ -144,4 +166,5 @@ export default {
   createMemory,
   updateMemory,
   deleteMemory,
+  getCategories
 };

@@ -1,49 +1,41 @@
 <script>
-    import { enhance } from "$app/forms";
-
-  let { memory } = $props();
+  export let memory;
 </script>
 
-<div class="memory-card">
-  <div>
-    <img class="img-fluid" src={memory.image} alt=""/>
-  </div>
-  <div class="details">
-    <div class="title">
-      <a href={"/menue/memories/" + memory._id} class="title-link" style="color: white;">{memory.title}</a>
-    </div>
-    <div>
-      Ort: {memory.location}
-    </div>
-    <div>
-      Jahr: {memory.year}
-    </div>
-  </div>
-
-  {#if memory.memory}
-  <form method="POST" action="?/removeFromMemories" use:enhance>
-    <input name="id" type="hidden" value="{memory._id}">
-    <button class="btn btn-success">Als To Do markieren</button>
-  </form>
-  {:else}
-  <form method="POST" action="?/addToMemories" use:enhance>
-    <input name="id" type="hidden" value="{memory._id}">
-    <button class="btn btn-danger">Als gemacht markieren</button>
-  </form>
-  {/if}
-</div>
-
 <style>
-  .memory-card {
-    border: 1px solid #555;
-    height: 100%;
-    background-color: #444;
-    color: white;
-  }
-  .details {
-    padding: 0.5em;
-  }
-  .title {
-    font-weight: bold;
+  .title-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 </style>
+
+<div class="card mb-4 shadow-sm">
+  <div class="card-img-top">
+    <img class="img-fluid" src={memory.image} alt="Memory Image"/>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <a href={"/menue/memories/" + memory._id} class="title-link text-decoration-none text-dark">{memory.title}</a>
+    </h5>
+    <p class="card-text">
+      <strong>Ort:</strong> {memory.location}
+    </p>
+    <p class="card-text">
+      <strong>Jahr:</strong> {memory.year}
+    </p>
+
+    {#if memory.memory}
+      <form method="POST" action="?/removeFromMemories" use:enhance>
+        <input name="id" type="hidden" value="{memory._id}">
+        <button class="btn btn-success w-100">Als To Do markieren</button>
+      </form>
+    {:else}
+      <form method="POST" action="?/addToMemories" use:enhance>
+        <input name="id" type="hidden" value="{memory._id}">
+        <button class="btn btn-danger w-100">Als gemacht markieren</button>
+      </form>
+    {/if}
+  </div>
+</div>
