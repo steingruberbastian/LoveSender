@@ -1,4 +1,3 @@
-import { memory } from "$lib/components/MemoryCard.svelte";
 import db from "$lib/db.js";
 import { redirect } from "@sveltejs/kit";
 
