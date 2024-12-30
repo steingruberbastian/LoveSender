@@ -159,6 +159,31 @@ async function getCategories() {
   return categories;
 }
 
+async function getMemoriesByCategory(category_id) {
+  let memories = [];
+  try {
+    // Erst die Kategory holen um seine numerische ID zu bekommen
+    const category = await db.collection("categories").findOne({ 
+      _id: new ObjectId(category_id) 
+    });
+    
+    if (category) {
+      // Mit der numerischen ID nach Memories suchen
+      const collection = db.collection("memories");
+      const query = { category_id: category.id }; // Hier nutzen wir memory.id
+      console.log("Suche nach Memories mit query:", query);
+      
+      memories = await collection.find(query).toArray();
+      memories.forEach((memory) => {
+        memory._id = memory._id.toString();
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  return memories;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getMemories,
@@ -166,5 +191,6 @@ export default {
   createMemory,
   updateMemory,
   deleteMemory,
-  getCategories
+  getCategories,
+  getMemoriesByCategory
 };
