@@ -28,18 +28,22 @@
     }
 </script>
 
-<div class="container mt-5">
+<div class="container mt-5" style="width: 600px;">
     <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-            <h1 class="mb-4">Hallo love, brauchst du einen Text mit liebe?</h1>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h1 class="mb-4">Hallo love, brauchst du einen Text mit Liebe?</h1>
 
-            {#if pressesLeft > 0}
-                <p>Drücke den Knopf unten!</p>
-                <button class="btn btn-primary mb-3" on:click={handleButtonClick}>Liebestext bekommen</button>
-                <div class="counter mb-3">Du hast noch {pressesLeft} credits</div>
-            {:else}
-                <p>{reloadMessage}</p>
-            {/if}
+                    {#if pressesLeft > 0}
+                        <p>Drücke den Knopf unten!</p>
+                        <button class="btn btn-primary mb-3" on:click={handleButtonClick}>Liebestext bekommen</button>
+                        <div class="counter mb-3">Du hast noch {pressesLeft} credits</div>
+                    {:else}
+                        <p>{reloadMessage}</p>
+                    {/if}
+                </div>
+            </div>
         </div>
     </div>
 </div>
