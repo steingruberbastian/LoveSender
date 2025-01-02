@@ -281,6 +281,8 @@ export default {
   updateMemory,
   deleteMemory,
   getCategories,
+  getMemoriesByCategory,
+  getCategoryByMemory,
   getCredit, // Ensure getCredit is exported
   decrementCredit // Ensure decrementCredit is exported
 };
