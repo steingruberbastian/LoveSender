@@ -222,6 +222,57 @@ async function getCategoryByMemory(memory_id) {
   return category;
 }
 
+// Get credit information
+async function getCredit() {
+  let credit;
+  try {
+    const collection = db.collection("credits");
+
+    // You can specify a query/filter here
+    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
+    const query = {};
+
+    // Get the first object that matches the query
+    credit = await collection.findOne(query);
+    if (credit) {
+      credit._id = credit._id.toString(); // convert ObjectId to String
+    }
+
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return credit;
+}
+
+// Decrement credit number by 1
+async function decrementCredit() {
+  let result;
+  console.log("Decrement credit of the first entry");
+  try {
+    const collection = db.collection("credits");
+
+    // Find the first document in the collection
+    const firstCredit = await collection.findOne({});
+
+    if (firstCredit) {
+      // Decrement the number field by 1
+      result = await collection.updateOne(
+        { _id: firstCredit._id },
+        { $inc: { number: -1 } }
+      );
+    } else {
+      console.log("No credit entry found");
+      result = { modifiedCount: 0 };
+    }
+
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return result;
+}
+
 // export all functions so that they can be used in other files
 export default {
   getMemories,
@@ -230,6 +281,6 @@ export default {
   updateMemory,
   deleteMemory,
   getCategories,
-  getMemoriesByCategory,
-  getCategoryByMemory
+  getCredit, // Ensure getCredit is exported
+  decrementCredit // Ensure decrementCredit is exported
 };
