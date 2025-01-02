@@ -16,9 +16,9 @@
 
             if (!response.ok) {
                 const result = await response.json();
-                throw new Error(result.message || "Failed to send email");
+                throw new Error(result.message || "Deine Anfrage konnte nicht gesendet werden.");
             } else {
-                message = "Email erfolgreich versendet!";
+                message = "Deine Anfrage wurde erfolgreich versendet!";
             }
         } catch (error) {
             message = "Ein Fehler ist aufgetreten: " + error.message;

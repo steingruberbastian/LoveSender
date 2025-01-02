@@ -4,6 +4,7 @@ dotenv.config();
 import nodemailer from "nodemailer";
 const GOOGLE_EMAIL = process.env.GOOGLE_EMAIL;
 const GOOGLE_EMAIL_PASSWORD = process.env.GOOGLE_EMAIL_PASSWORD;
+const RECEIVER_EMAIL = process.env.RECEIVER_EMAIL;
 
 export async function sendEmail() {
 
@@ -18,7 +19,7 @@ export async function sendEmail() {
   });
 
   transporter.sendMail({
-    to: "bastian.steingruber@gmx.ch",
+    to: RECEIVER_EMAIL,
     subject: "Cle needs love!",
     html: "<p>Write her something sweet :)</p>",
   }).then(() => {
