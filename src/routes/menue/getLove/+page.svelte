@@ -51,7 +51,7 @@
                                 Liebestext bekommen
                             {/if}
                         </button>
-                        <div class="counter mb-3">Du hast noch {credits.number} übrig</div>
+                        <div class="counter mb-3">Du hast noch {credits.number} Credits übrig</div>
                     {:else}
                         <p class="card-text">{reloadMessage}</p>
                     {/if}
