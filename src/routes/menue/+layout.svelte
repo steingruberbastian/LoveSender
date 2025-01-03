@@ -28,6 +28,15 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/menue/categories">Kategorien</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
+              Gegen Langeweile
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/menue/noMoreBoredVideos">Videos</a></li>
+              <li><a class="dropdown-item" href="/menue/noMoreBoredPhotos">Photos</a></li>
+          </ul>
+      </li>
       </ul>
     </div>
   </div>
