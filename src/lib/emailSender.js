@@ -9,7 +9,7 @@ export async function sendEmail() {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
-    secure: true, // Use true for port 465, false for 587
+    secure: true, // 465 ist true, 587 ist false
     auth: {
       user: GOOGLE_EMAIL,
       pass: GOOGLE_EMAIL_PASSWORD,

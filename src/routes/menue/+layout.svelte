@@ -1,5 +1,5 @@
 <script>
-  import "./styles.css";
+  import "../styles.css";
   let { children } = $props();
 </script>
 
@@ -34,7 +34,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/menue/noMoreBoredVideos">Videos</a></li>
-              <li><a class="dropdown-item" href="/menue/noMoreBoredPhotos">Photos</a></li>
+              <li><a class="dropdown-item" href="/menue/noMoreBoredPhotos">Fotos</a></li>
           </ul>
       </li>
       </ul>
