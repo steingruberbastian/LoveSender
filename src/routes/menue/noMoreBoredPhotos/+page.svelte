@@ -1,4 +1,5 @@
 <script>
+    import "../../styles.css";
     import { onMount } from "svelte";
 
     let imageUrls = [];
@@ -32,18 +33,6 @@
     }
 </script>
 
-<style>
-    .carousel-item img {
-        height: 500px;
-    }
-    .carousel-item img.landscape {
-        object-fit: cover;
-    }
-    .carousel-item img.portrait {
-        object-fit: contain;
-    }
-</style>
-
 <div class="container text-center my-5">
     <h1>Lass dich fallen, in die Welt der Geschichten</h1>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-intervall="5000">
@@ -64,7 +53,7 @@
     Musik stoppen
 </button>
 
-<audio id="myAudio" autoplay loop>
+<audio id="myAudio" loop>
     <source src="/music/OtroAtardecer.mp3" type="audio/mpeg">
     Dein Browser kann diese Musik gerade nicht abspielen.
 </audio>

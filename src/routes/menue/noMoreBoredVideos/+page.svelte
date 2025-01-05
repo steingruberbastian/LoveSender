@@ -1,8 +1,6 @@
-<style>
-    iframe {
-        height: 300px;
-    }
-</style>
+<script>
+    import "../../styles.css";
+</script>
 
 <div class="container my-5">
     <div class="row justify-content-center">

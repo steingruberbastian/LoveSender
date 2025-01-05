@@ -1,4 +1,29 @@
+/*standard Hintergrund- und Schriftfarbe*/
 body {
     background-color: black;
     color: white;
 }
+
+/*wird in noMoreBoredVideos benutzt*/
+iframe {
+    height: 300px;
+}
+
+/*wird in noMoreBoredPhotos benutzt*/
+.carousel-item img {
+    height: 500px;
+}
+.carousel-item img.landscape {
+    object-fit: cover;
+}
+.carousel-item img.portrait {
+    object-fit: contain;
+}
+
+/*Wird in CategoryCard & MemoryCard benutzt*/
+.title-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }

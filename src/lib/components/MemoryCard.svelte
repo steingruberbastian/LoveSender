@@ -1,15 +1,7 @@
 <script>
   export let memory;
+  import "../../routes/styles.css";
 </script>
-
-<style>
-  .title-link {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-  }
-</style>
 
 <div class="card mb-4 shadow-sm">
   <a href={"/menue/memories/" + memory._id} class="text-decoration-none">
