@@ -4,11 +4,11 @@
       const categories = await response.json();
       return { categories };
     }
-  </script>
+</script>
   
-  <script>
+<script>
     import AddMemory from "$lib/components/AddMemory.svelte";
     export let data;
-  </script>
+</script>
   
-  <AddMemory {data} />
+<AddMemory {data} />

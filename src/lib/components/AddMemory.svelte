@@ -1,19 +1,6 @@
 <script>
     export let data = [];
-  
-    function handleSubmit(event) {
-      event.preventDefault();
-      const formData = new FormData(event.target);
-      const memory = {
-        title: formData.get('title'),
-        location: formData.get('location'),
-        year: formData.get('year'),
-        category: formData.get('category')
-      };
-  
-      // Handle form submission logic here
-    }
-  
+
     function redirectToMenue() {
       setTimeout(() => {
         window.location.href = "/menue/memories";
@@ -26,7 +13,7 @@
     <div class="card shadow-sm">
       <div class="card-body">
         <h1 class="card-title text-center mb-4">Neue Memory erstellen</h1>
-        <form method="POST" action="?/create" onsubmit={redirectToMenue()}>
+        <form method="POST" action="?/create" onsubmit={redirectToMenue()} enctype="multipart/form-data">
           <div class="mb-3">
             <label for="title" class="form-label">Name</label>
             <input type="text" name="title" class="form-control" placeholder="Gib ein Titel ein" required />
@@ -47,6 +34,20 @@
                 <option value={category.id}>{category.category}</option>
               {/each}
             </select>
+          </div>
+          <div class="mb-3">
+            <input type="checkbox" name="memory" class="form-check-input" id="memory"/>
+            <label for="memory" class="form-label">Memory schon gemacht</label>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Memory Cover</label>
+            <input 
+              type="file" 
+              class="form-control" 
+              id="image" 
+              name="image" 
+              accept="image/*"
+            />
           </div>
           <button type="submit" class="btn btn-primary w-100">Memory hinzufügen</button>
         </form>

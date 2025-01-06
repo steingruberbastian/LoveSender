@@ -7,7 +7,7 @@
   <a href={"/menue/memories/" + memory._id} class="text-decoration-none">
     <div class="card-img-top">
       <!-- svelte-ignore a11y_img_redundant_alt -->
-      <img class="img-fluid" src={memory.image} alt="Memory Image"/>
+      <img class="img-fluid fixed-height" src={memory.image} alt="Memory Image"/>
     </div>
     <div class="card-body">
       <h5 class="card-title">

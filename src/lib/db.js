@@ -45,8 +45,6 @@ async function getMemory(id) {
 
 // Erstellt eine neue Memory
 async function createMemory(memory) {
-  memory.image = "/images/placeholder.jpg";
-  memory.memory = false;
   try {
     const collection = db.collection("memories");
     const result = await collection.insertOne(memory);
