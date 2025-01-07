@@ -13,16 +13,16 @@
                     (memory) => !memory.memory,
                 );
             }
-            return memoriesFiltered;
+            return memoriesFiltered.reverse();
         }
         if (toDoChecked) {
             let memoriesFiltered = data.memories;
             memoriesFiltered = memoriesFiltered.filter(
                 (memory) => !memory.memory,
             );
-            return memoriesFiltered;
+            return memoriesFiltered.reverse();
         } else {
-            return data.memories;
+            return data.memories.reverse();
         }
     });
 </script>

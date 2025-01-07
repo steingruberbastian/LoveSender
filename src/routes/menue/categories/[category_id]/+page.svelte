@@ -11,7 +11,8 @@
                 <p class="text-center">Keine Erinnerungen vorhanden</p>
             </div>
         {/if}
-        {#each data.memories as memory}
+        
+        {#each data.memories.reverse() as memory}
             <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
                 <MemoryCard {memory}></MemoryCard>
             </div>
