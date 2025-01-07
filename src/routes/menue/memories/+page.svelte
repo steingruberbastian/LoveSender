@@ -13,16 +13,16 @@
                     (memory) => !memory.memory,
                 );
             }
-            return memoriesFiltered.reverse();
+            return memoriesFiltered;
         }
         if (toDoChecked) {
             let memoriesFiltered = data.memories;
             memoriesFiltered = memoriesFiltered.filter(
                 (memory) => !memory.memory,
             );
-            return memoriesFiltered.reverse();
+            return memoriesFiltered;
         } else {
-            return data.memories.reverse();
+            return data.memories;
         }
     });
 </script>
@@ -53,7 +53,7 @@
 </div>
 
 <div class="row mt-3">
-    {#each memories as memory}
+    {#each memories.reverse() as memory}
         <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
             <MemoryCard {memory}></MemoryCard>
         </div>
